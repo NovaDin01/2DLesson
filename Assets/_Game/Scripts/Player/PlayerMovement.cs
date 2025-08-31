@@ -45,4 +45,5 @@ public class PlayerMovement : MonoBehaviour
     {
         _rigidbody2D.linearVelocity = new Vector2(_rigidbody2D.linearVelocityX, jumpForce);
     }
+    
 }

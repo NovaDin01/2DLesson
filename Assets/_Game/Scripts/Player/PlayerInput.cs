@@ -15,8 +15,6 @@ public class PlayerInput : MonoBehaviour
         float horizontalDirection = Input.GetAxis(GlobalStringVars.HORIZONTAL_AXIS);
         bool isJumpButtonPressed = Input.GetButtonDown(GlobalStringVars.JUMP);
         
-        
-        
         _playerMovement.Move(horizontalDirection, isJumpButtonPressed);
     }
 }
