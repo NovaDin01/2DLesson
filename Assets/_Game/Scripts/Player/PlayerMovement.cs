@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void HorizontalMovement(float direction)
     {
-        _rigidbody2D.linearVelocity = new Vector2(speed * _animationCurve.Evaluate(direction), _rigidbody2D.linearVelocity.y);
+        _rigidbody2D.linearVelocity = new Vector2(_animationCurve.Evaluate(direction), _rigidbody2D.linearVelocity.y);
     }
 
     private void Jump()

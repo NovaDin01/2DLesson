@@ -1,24 +1,35 @@
 using UnityEngine;
 
+
 public class HealthSystem : MonoBehaviour
 {
-    [SerializeField] private float maxHealth;
     [SerializeField] private float currentHealth;
     [SerializeField] private bool isAlive;
 
-    private void Awake()
+    public event System.Action onDeath;
+    public void Initialization(float maxHealth)
     {
-        isAlive = true;
         currentHealth = maxHealth;
+        isAlive = true;
     }
 
     public void TakeDamage(float damage)
     {
         currentHealth -= damage;
+        
+        if (currentHealth <= 0 && isAlive)
+        {
+            Die();
+        }
     }
 
     private void Die()
     {
-        if(currentHealth <= 0) isAlive = false;
+        if (currentHealth <= 0)
+        {
+            isAlive = false;
+            onDeath?.Invoke();
+        }
+        
     }
 }
