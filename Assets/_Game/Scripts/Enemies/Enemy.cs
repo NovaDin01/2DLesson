@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-abstract class Enemy : MonoBehaviour
+public abstract class Enemy : MonoBehaviour
 {
     protected float damage;
     protected float maxHealth;
