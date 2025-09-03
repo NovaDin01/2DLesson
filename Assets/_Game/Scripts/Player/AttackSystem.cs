@@ -6,6 +6,8 @@ public class AttackSystem : MonoBehaviour
 {
     [SerializeField] private Animator _animator;
     [SerializeField] private float damage;
+    [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private Transform pointSpawn;
     private GameObject target;
 
     public void Attack(bool isAttackButtonPressed)
@@ -15,7 +17,7 @@ public class AttackSystem : MonoBehaviour
 
     private void CreateBullet()
     {
-        // Необходимо написать логику создания пули, которая при касании проверяет наличие HealthSystem и делает TakeDamage
+        Instantiate(bulletPrefab, pointSpawn);
     }
 
     private IEnumerator AttackMoment()

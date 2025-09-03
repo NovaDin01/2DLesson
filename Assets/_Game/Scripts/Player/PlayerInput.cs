@@ -5,6 +5,7 @@ public class PlayerInput : MonoBehaviour
 {
     private PlayerMovement _playerMovement;
     private AttackSystem _attackSystem;
+    private Bullet _bullet;
 
     private void Awake()
     {
@@ -20,5 +21,6 @@ public class PlayerInput : MonoBehaviour
         
         _playerMovement.Move(horizontalDirection, isJumpButtonPressed);
         _attackSystem.Attack(isAttackButtonPressed);
+        _bullet.BulletLogic(horizontalDirection);
     }
 }
