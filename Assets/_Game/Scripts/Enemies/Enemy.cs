@@ -3,19 +3,17 @@ using UnityEngine;
 
 public abstract class Enemy : MonoBehaviour
 {
-    [SerializeField] protected float damage;
-    [SerializeField] protected float maxHealth;
+    [SerializeField] protected int maxHealth;
     protected HealthSystem healthSystem;
 
     private void Awake()
     {
         healthSystem = GetComponent<HealthSystem>();
-        healthSystem.Initialization(maxHealth);
         healthSystem.onDeath += Die;
     }
 
 
-    protected virtual void TakeDamage(float damage)
+    protected virtual void TakeDamage(int damage)
     {
         healthSystem.TakeDamage(damage);
     }

@@ -21,6 +21,5 @@ public class PlayerInput : MonoBehaviour
         
         _playerMovement.Move(horizontalDirection, isJumpButtonPressed);
         _attackSystem.Attack(isAttackButtonPressed);
-        _bullet.BulletLogic(horizontalDirection);
     }
 }

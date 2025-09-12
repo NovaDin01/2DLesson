@@ -1,23 +1,28 @@
 using UnityEngine;
 
-
 public class HealthSystem : MonoBehaviour
 {
-     private float currentHealth;
-     private bool isAlive;
+    [SerializeField] private int maxHealth = 3;
+
+    public int CurrentHealth { get; private set; }
+    private bool isAlive;
 
     public event System.Action onDeath;
-    public void Initialization(float maxHealth)
+
+    private void Awake()
     {
-        currentHealth = maxHealth;
+        CurrentHealth = maxHealth;
         isAlive = true;
     }
 
-    public void TakeDamage(float damage)
+    public void TakeDamage(int damage)
     {
-        currentHealth -= damage;
-        
-        if (currentHealth <= 0 && isAlive)
+        if (!isAlive) return;
+
+        CurrentHealth -= damage;
+        CurrentHealth = Mathf.Max(CurrentHealth, 0);
+
+        if (CurrentHealth <= 0 && isAlive)
         {
             Die();
         }
@@ -25,11 +30,7 @@ public class HealthSystem : MonoBehaviour
 
     private void Die()
     {
-        if (currentHealth <= 0)
-        {
-            isAlive = false;
-            onDeath?.Invoke();
-        }
-        
+        isAlive = false;
+        onDeath?.Invoke();
     }
 }

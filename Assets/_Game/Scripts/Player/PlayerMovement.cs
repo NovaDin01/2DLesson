@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
@@ -17,15 +18,17 @@ public class PlayerMovement : MonoBehaviour
     [Header("Характеристики игрока")]
     [SerializeField] private float jumpForce;
     [SerializeField] private float speed;
+    [SerializeField] private int maxHealth;
 
     private float minValue = 0.01f;
-    private SpriteRenderer _spriteRenderer;
+    protected HealthSystem healthSystem;
     
 
     private void Awake()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
-        _spriteRenderer = GetComponent<SpriteRenderer>();
+        healthSystem = GetComponent<HealthSystem>();
+        healthSystem.onDeath += Die;
     }
 
     private void FixedUpdate()
@@ -46,8 +49,8 @@ public class PlayerMovement : MonoBehaviour
         
         else _animator.SetBool("isRunning", false);
 
-        if (direction > minValue) _spriteRenderer.flipX = false;
-        else if (direction < -minValue) _spriteRenderer.flipX = true;
+        if (direction > minValue) _rigidbody2D.transform.rotation = new Quaternion(0, 0, 0, 0);
+        else if (direction < -minValue) _rigidbody2D.transform.rotation = new Quaternion(0, 180, 0, 0);
     }
 
     private void HorizontalMovement(float direction)
@@ -58,6 +61,16 @@ public class PlayerMovement : MonoBehaviour
     private void Jump()
     {
         _rigidbody2D.linearVelocity = new Vector2(_rigidbody2D.linearVelocityX, jumpForce);
+    }
+
+    private void TakeDamage()
+    {
+        
+    }
+
+    private void Die()
+    {
+        SceneController.Instance.ReloadScene();
     }
     
 }

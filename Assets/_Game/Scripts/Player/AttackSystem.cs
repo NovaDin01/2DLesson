@@ -1,40 +1,56 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
 public class AttackSystem : MonoBehaviour
 {
+    [Header("Настройки атаки")]
     [SerializeField] private Animator _animator;
-    [SerializeField] private float damage;
-    [SerializeField] private GameObject bulletPrefab;
-    [SerializeField] private Transform pointSpawn;
-    private GameObject target;
+    [SerializeField] private int damage = 10;
+    [SerializeField] private float attackRadius = 0.5f;
+    [SerializeField] private float attackCooldown = 0.2f;
+    [SerializeField] private Transform attackPoint;
+    [SerializeField] private LayerMask enemyLayer;
+    
+    private bool canAttack = true;
+    
+
+    private void OnDrawGizmosSelected()
+    {
+        if (attackPoint != null)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(attackPoint.position, attackRadius);
+        }
+    }
 
     public void Attack(bool isAttackButtonPressed)
     {
-        if (isAttackButtonPressed) StartCoroutine(AttackMoment());
+        if (isAttackButtonPressed && canAttack)
+            StartCoroutine(AttackCoroutine());
     }
 
-    private void CreateBullet()
+    private IEnumerator AttackCoroutine()
     {
-        Instantiate(bulletPrefab, pointSpawn);
-    }
-
-    private IEnumerator AttackMoment()
-    {
+        canAttack = false;
         _animator.SetBool("isAttack", true);
-        
-        yield return new WaitForSeconds(0.2f);
-        
-        CreateBullet(); 
-        
-        if (target != null) // убрать
-        {
-            Debug.Log(target);
-            var health = target.GetComponent<HealthSystem>();
-            if (health != null) health.TakeDamage(damage);
-        }
-        _animator.SetBool("isAttack", false);
-    }
 
+        yield return new WaitForSeconds(attackCooldown);
+
+        Collider2D[] hits = Physics2D.OverlapCircleAll(attackPoint.position, attackRadius, enemyLayer);
+
+        foreach (Collider2D hit in hits)
+        {
+            HealthSystem health = hit.GetComponent<HealthSystem>();
+            if (health != null)
+            {
+                health.TakeDamage(damage);
+                Debug.Log($"Нанесено {damage} урона -> {hit.name}");
+            }
+        }
+        
+        _animator.SetBool("isAttack", false);
+        
+        yield return new WaitForSeconds(attackCooldown * 0.5f);
+        canAttack = true;
+    }
 }
