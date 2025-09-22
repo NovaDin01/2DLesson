@@ -18,6 +18,7 @@ public class PlayerInput : MonoBehaviour
         float horizontalDirection = Input.GetAxis(GlobalStringVars.HORIZONTAL_AXIS);
         bool isJumpButtonPressed = Input.GetButtonDown(GlobalStringVars.JUMP);
         bool isAttackButtonPressed = Input.GetButtonDown(GlobalStringVars.ATTACK);
+        bool isActivationButtonPressed = Input.GetButtonDown(GlobalStringVars.JUMP);
         
         _playerMovement.Move(horizontalDirection, isJumpButtonPressed);
         _attackSystem.Attack(isAttackButtonPressed);

@@ -6,4 +6,6 @@ public class GlobalStringVars : MonoBehaviour
     public const string VERTICAL_AXIS = "Vertical";
     public const string JUMP = "Jump";
     public const string ATTACK = "Fire1";
+    public const string ACTIVATION = "Activation";
+    
 }

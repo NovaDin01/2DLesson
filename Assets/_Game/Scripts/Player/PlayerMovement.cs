@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpForce;
     [SerializeField] private float speed;
     [SerializeField] private int maxHealth;
+    private event Action onActivated;
 
     private float minValue = 0.01f;
     protected HealthSystem healthSystem;
@@ -56,6 +57,11 @@ public class PlayerMovement : MonoBehaviour
     private void HorizontalMovement(float direction)
     {
         _rigidbody2D.linearVelocity = new Vector2(_animationCurve.Evaluate(direction), _rigidbody2D.linearVelocity.y);
+    }
+
+    public void Activation(bool isActivationButtonPressed)
+    {
+        onActivated?.Invoke();
     }
 
     private void Jump()
