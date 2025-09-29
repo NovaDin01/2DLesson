@@ -5,11 +5,14 @@ public abstract class Enemy : MonoBehaviour
 {
     [SerializeField] protected int maxHealth;
     protected HealthSystem healthSystem;
+    private ScoreHolder scoreHolder;
 
     private void Awake()
     {
         healthSystem = GetComponent<HealthSystem>();
         healthSystem.onDeath += Die;
+        
+        scoreHolder = GetComponent<ScoreHolder>();
     }
 
 
@@ -20,6 +23,7 @@ public abstract class Enemy : MonoBehaviour
 
     protected virtual void Die()
     {
+        scoreHolder.GetScore();
         Destroy(gameObject);
     }
 }

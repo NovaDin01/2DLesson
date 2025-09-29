@@ -33,6 +33,7 @@ public class EnemyAttack : MonoBehaviour
         {
             canAttack = false;
             playerHealth.TakeDamage(damage);
+            Debug.Log("Я долбаеб");
         }
         yield return new WaitForSeconds(attackCooldown);
         canAttack = true; 

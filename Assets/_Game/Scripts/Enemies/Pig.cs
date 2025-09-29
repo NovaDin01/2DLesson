@@ -8,7 +8,6 @@ public class Pig : Enemy
 
     protected override void Die()
     {
-        Debug.Log("Pig died!");
         base.Die();
     }
 }

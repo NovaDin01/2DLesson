@@ -52,11 +52,14 @@ TagManager:
   - name: Decorations
     uniqueID: 458331421
     locked: 0
+  - name: Objects
+    uniqueID: 2540502023
+    locked: 0
   - name: Character
     uniqueID: 831118881
     locked: 0
-  - name: Objects
-    uniqueID: 2540502023
+  - name: UI
+    uniqueID: 215854869
     locked: 0
   m_RenderingLayers:
   - Default
