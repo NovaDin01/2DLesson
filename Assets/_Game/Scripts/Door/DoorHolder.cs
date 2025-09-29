@@ -1,16 +1,21 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class DoorHolder : MonoBehaviour
 {
    [SerializeField] private GameObject hint;
-
-    private void OnTriggerEnter2D(Collider2D other)
+   [SerializeField] private Animator playerAnimator;
+   [SerializeField] private Animator doorAnimator;
+   
+   private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
             hint.SetActive(true);
-            Time.timeScale = 0;
+            playerAnimator.SetBool("door", true);
+            doorAnimator.SetBool("isOpen", true);
+            StartCoroutine("WaitComeInDoor");
         }
     }
 
@@ -21,5 +26,13 @@ public class DoorHolder : MonoBehaviour
             hint.SetActive(false);
             Time.timeScale = 1;
         }
+    }
+
+    private IEnumerator WaitComeInDoor()
+    {
+        yield return new WaitForSeconds(0.7f);
+        playerAnimator.SetBool("door", false);
+        doorAnimator.SetBool("isOpen", false);
+        Time.timeScale = 0;
     }
 }

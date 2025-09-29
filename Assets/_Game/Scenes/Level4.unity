@@ -1641,6 +1641,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c73059f7d260d0b45a6e31446838b892, type: 3}
+--- !u!114 &926301196 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 430753940424277148, guid: c73059f7d260d0b45a6e31446838b892, type: 3}
+  m_PrefabInstance: {fileID: 926301195}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2e230d3a36f2dd4a967667c4bda46fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1002691412 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8598482562154442820, guid: b40111013cbb98047a6222d6e7d4e440, type: 3}
@@ -3952,7 +3963,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -4658123360840285283, guid: 0a07ad1518380ba42a7b92cbdf39b549, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4356,6 +4367,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -12
       objectReference: {fileID: 0}
+    - target: {fileID: 2747095481569161271, guid: de20f186b93779b46a6a22f18574fe27, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 926301196}
+    - target: {fileID: 2747095481569161271, guid: de20f186b93779b46a6a22f18574fe27, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ReloadScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 2890628306287957749, guid: de20f186b93779b46a6a22f18574fe27, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 926301196}
+    - target: {fileID: 2890628306287957749, guid: de20f186b93779b46a6a22f18574fe27, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NextLevel
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4377,6 +4404,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1622447346 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 847041851025062902, guid: de20f186b93779b46a6a22f18574fe27, type: 3}
+  m_PrefabInstance: {fileID: 1622447343}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1705011380
 GameObject:
   m_ObjectHideFlags: 0
@@ -4507,7 +4539,7 @@ PrefabInstance:
     - target: {fileID: 7901755164030585399, guid: 4ed52909fbea2914f95b8e24c8306415, type: 3}
       propertyPath: hint
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1622447346}
     - target: {fileID: 8784645545768497123, guid: 4ed52909fbea2914f95b8e24c8306415, type: 3}
       propertyPath: m_Name
       value: Door

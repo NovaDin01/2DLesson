@@ -2665,7 +2665,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 215854869
   m_SortingLayer: 4
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -4658123360840285283, guid: 0a07ad1518380ba42a7b92cbdf39b549, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2985,6 +2985,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c73059f7d260d0b45a6e31446838b892, type: 3}
+--- !u!114 &1395888420 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 430753940424277148, guid: c73059f7d260d0b45a6e31446838b892, type: 3}
+  m_PrefabInstance: {fileID: 1395888419}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2e230d3a36f2dd4a967667c4bda46fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1452478687
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7704,7 +7715,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1395888420}
         m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
         m_MethodName: NextLevel
         m_Mode: 1
@@ -7814,7 +7825,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1395888420}
         m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
         m_MethodName: ReloadScene
         m_Mode: 1
@@ -8093,7 +8104,7 @@ PrefabInstance:
     - target: {fileID: 7901755164030585399, guid: 4ed52909fbea2914f95b8e24c8306415, type: 3}
       propertyPath: hint
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 198063374809561369}
     - target: {fileID: 8784645545768497123, guid: 4ed52909fbea2914f95b8e24c8306415, type: 3}
       propertyPath: m_Name
       value: Door
