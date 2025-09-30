@@ -1629,6 +1629,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 17140232239252496, guid: b4e9071b46cc72442aab40030bb68c1f, type: 3}
   m_PrefabInstance: {fileID: 1084740130}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1084740132 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 192881121448761754, guid: b4e9071b46cc72442aab40030bb68c1f, type: 3}
+  m_PrefabInstance: {fileID: 1084740130}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1101159602
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1681,6 +1686,14 @@ PrefabInstance:
       propertyPath: hint
       value: 
       objectReference: {fileID: 1167379286}
+    - target: {fileID: 7901755164030585399, guid: 4ed52909fbea2914f95b8e24c8306415, type: 3}
+      propertyPath: doorAnimator
+      value: 
+      objectReference: {fileID: 1101159604}
+    - target: {fileID: 7901755164030585399, guid: 4ed52909fbea2914f95b8e24c8306415, type: 3}
+      propertyPath: playerAnimator
+      value: 
+      objectReference: {fileID: 1084740132}
     - target: {fileID: 8784645545768497123, guid: 4ed52909fbea2914f95b8e24c8306415, type: 3}
       propertyPath: m_Name
       value: Door (1)
@@ -1693,6 +1706,11 @@ PrefabInstance:
 --- !u!4 &1101159603 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 351128777749948239, guid: 4ed52909fbea2914f95b8e24c8306415, type: 3}
+  m_PrefabInstance: {fileID: 1101159602}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1101159604 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4480048892595821782, guid: 4ed52909fbea2914f95b8e24c8306415, type: 3}
   m_PrefabInstance: {fileID: 1101159602}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1115267903

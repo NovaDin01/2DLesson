@@ -4026,6 +4026,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 17140232239252496, guid: b4e9071b46cc72442aab40030bb68c1f, type: 3}
   m_PrefabInstance: {fileID: 1084740130}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1084740132 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 192881121448761754, guid: b4e9071b46cc72442aab40030bb68c1f, type: 3}
+  m_PrefabInstance: {fileID: 1084740130}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1248372899
 GameObject:
   m_ObjectHideFlags: 0
@@ -5204,6 +5209,14 @@ PrefabInstance:
       propertyPath: hint
       value: 
       objectReference: {fileID: 5257911537546974432}
+    - target: {fileID: 7901755164030585399, guid: 4ed52909fbea2914f95b8e24c8306415, type: 3}
+      propertyPath: doorAnimator
+      value: 
+      objectReference: {fileID: 6529631352491996842}
+    - target: {fileID: 7901755164030585399, guid: 4ed52909fbea2914f95b8e24c8306415, type: 3}
+      propertyPath: playerAnimator
+      value: 
+      objectReference: {fileID: 1084740132}
     - target: {fileID: 8784645545768497123, guid: 4ed52909fbea2914f95b8e24c8306415, type: 3}
       propertyPath: m_Name
       value: Door
@@ -5214,6 +5227,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ed52909fbea2914f95b8e24c8306415, type: 3}
+--- !u!95 &6529631352491996842 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4480048892595821782, guid: 4ed52909fbea2914f95b8e24c8306415, type: 3}
+  m_PrefabInstance: {fileID: 6529631352491996841}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
